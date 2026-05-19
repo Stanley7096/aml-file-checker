@@ -2,8 +2,10 @@ services:
   - type: web
     name: aml-file-checker
     runtime: node
+    plan: free
     buildCommand: npm ci && npm run build
-    startCommand: npm run start
+    startCommand: npm run start:render
+    healthCheckPath: /
     envVars:
       - key: NODE_VERSION
         value: 24.14.1
