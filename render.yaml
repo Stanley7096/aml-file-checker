@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: aml-file-checker
+    runtime: node
+    buildCommand: npm ci && npm run build
+    startCommand: npm run start
+    envVars:
+      - key: NODE_VERSION
+        value: 24.14.1
+      - key: QIANFAN_API_KEY
+        sync: false
+      - key: QIANFAN_MODEL
+        sync: false
+      - key: QIANFAN_API_URL
+        value: https://qianfan.baidubce.com/v2/chat/completions
